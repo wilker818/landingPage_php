@@ -36,9 +36,11 @@ if (isset($_POST['descricao'])) {
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 	<!-- Inclusão do jQuery-->
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 	<!-- Inclusão do Plugin jQuery Validation-->
 	<script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.js"></script>
 </head>
 
 <body>
@@ -50,9 +52,10 @@ if (isset($_POST['descricao'])) {
 					echo "<br><p class='size16'><strong>$msg</strong></p>";
 				}
 				?><br><br>
-				<form id="formulairo" action="upload_image.php" method="post" enctype="multipart/form-data" style="border: 1px solid; padding: 29px;">
+				<form id="formulairo" action="upload_image.php" method="post" enctype="multipart/form-data" style="border: 1px solid; padding: 15px;">
 					<label>Selecione o arquivo:</label><br>
-					<input type="file" class="arquivo" name="arquivo" id="arquivo" required /><br><br>
+					<input type="file" class="arquivo" name="arquivo" id="arquivo" required /><br>
+					<small>**somente arquivos PNG, JPG, JPEG</small><br><br>
 					<label>Escreva o texto:</label><br>
 					<textarea type="text" name="descricao" id="descricao" rows="5" cols="42" maxlength="250" required placeholder=" Escreva aqui..." style="padding: 5px;"></textarea><br><br>
 					<input type="submit" value="Enviar" class="submit" style="padding: 5px 20px;" />
@@ -62,43 +65,22 @@ if (isset($_POST['descricao'])) {
 	</div>
 	<!-- VALIDATE -->
 	<script type="text/javascript">
-		/*$.validator.setDefaults({
-			submitHandler: function() {
-				alert("submitted!");
-			}
-		});
-		$('#form').validate();
-		$('#arquivo').rules('add', {
-			accept: "image/jpeg, image/pjpeg",
-			messages: {
-				accept: "Formato inválido."
-			}
-		});*/
-
 		$(document).ready(function() {
 			$("#formulairo").validate({
 				rules: {
 					arquivo: {
-						required: true
-
+						required: true,
+						extension: "jpeg|jpg|png"
 					},
 					descricao: {
 						required: true,
-						maxlength:250
+						maxlength: 250
 					}
-
 				},
-				submitHandler: function(form) {
-					alert("Arquivo enviado com sucesso!");
-				}
 			})
 		});
 	</script>
 </body>
-<!-- include jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<!-- jQuery Modal -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <!-- font-awesome -->
 <script defer src="font-awesome/js/all.js"></script>
 

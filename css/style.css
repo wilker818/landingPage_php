@@ -3,7 +3,7 @@
 body{ font-size:12px; font-family: 'Roboto', sans-serif; background-color: #e5e5e5; -webkit-font-smoothing: antialiased; color:#777575}
 
 @media (max-width: 768px){
-html, html body {overflow: hidden; overflow-y: scroll;}
+    html, html body {overflow: hidden; overflow-y: scroll;}
 }
 
 @media (max-width: 1300px){ .center, .center-2, .center-1000 { width: auto; padding-left: 15px; padding-right: 15px;}}
@@ -87,14 +87,10 @@ input:focus:-moz-placeholder, textarea:focus:-moz-placeholder{ color:transparent
 .content-product .content .align_item-image{ display: flex; justify-content: center;}
 .content-product .content .align_item-image .item-image{ border-radius: 5px; object-fit: cover;}
 
-.cabecalho{ position: relative; display: flex; align-items: flex-end; justify-content: space-between; padding: 35px 0px 0px 0px;}
 .line{ border-bottom: 1px solid #a9a9a9; margin: 10px 0px; box-shadow: 0px 1px 0px 0px #fff;}
 .logo{ position: relative;}
 .info{ position: relative; right: 0; display: flex; flex-direction: column; align-items: flex-end;}
 .info .contact{ position: relative; bottom: 20px; font-size: 22px;}
-.pages{ display: inline-flex; margin-top: 10px;}
-.pages>div{ font-size: 1rem; padding-right: 15px;}
-.pages div>a{ color: #777575; cursor: pointer;}
 
 .content-product .content .social-media{ display: flex; justify-content: space-evenly; flex-direction: row; flex-wrap: nowrap;}
 .content-product .content .desc .title{font-size: 17px;font-weight: 700;}
@@ -113,7 +109,6 @@ input:focus:-moz-placeholder, textarea:focus:-moz-placeholder{ color:transparent
 .footer .shadow-footer{ box-shadow: 0px 18px 27px -30px #000;}
 .footer .copyright{display: flex; justify-content: space-between; padding: 20px 0px;}
 
-
 @media(max-width:425px){ 
     .content-product{ display: flex; flex-wrap: wrap; justify-content: space-around;}
     .content-product .content{ width: 100% !important; height: 100% !important; margin: 0!important; margin-bottom: 20px !important;}
@@ -129,26 +124,3 @@ input:focus:-moz-placeholder, textarea:focus:-moz-placeholder{ color:transparent
     .content-product .content {width: 48%; height: 290px; margin: 0.9%; float: left;} 
     .c-mobile{padding: 0;}     
 }
-
-
-
-/*@media(min-width:768px){ 
-    #content-product{
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-    }
-}
-@media(max-width:768px){ 
-    #content-product{ padding: 0 15px; display: flex; justify-content: space-between; flex-wrap: wrap}
-    .cabecalho{ padding: 35px 15px 0px 15px; position: relative; display: flex; justify-content: space-between; flex-direction: row; flex-wrap: wrap; } 
-    .footer .c-footer{ padding: 15px;display: block;}
-}
-@media(max-width:425px){  
-    #content-product{ display: flex; justify-content: center; padding: 0px;}    
-    .footer .c-footer{ display: block;}
-    .logo>img{ max-width: 200px;max-height: 90px;}       
-    .cabecalho{ position: relative; display: block; padding: 35px 0px 0px 0px;}    
-}*/
-
-

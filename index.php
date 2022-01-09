@@ -12,8 +12,8 @@ $msg_sem = ($qtd_arquivos <= 0) ? "NÃO HÁ ARQUIVOS NO SISTEMA!" : "";
   <title>TESTE PROGRAMADOR</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/reset.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="font-awesome/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
@@ -72,11 +72,31 @@ $msg_sem = ($qtd_arquivos <= 0) ? "NÃO HÁ ARQUIVOS NO SISTEMA!" : "";
     </div>
   </div>
   <?php include 'footer.php'; ?>
+  <!-- include jQuery -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <!-- jQuery Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!-- font-awesome -->
+  <script defer src="font-awesome/js/all.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      var uls = $('#menu ul');
+      uls.hide();
+
+      $('#menu > li').click(function(e) {
+        e.stopPropagation();
+        uls.hide();
+        $(this).find('ul').show();
+      });
+      $('#menu ul').click(function(e) {
+        e.stopPropagation();
+      });
+      $('body').click(function() {
+        uls.hide();
+      });
+    });
+  </script>
 </body>
-<!-- include jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<!-- jQuery Modal -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<!-- font-awesome -->
-<script defer src="font-awesome/js/all.js"></script>
+
 </html>
