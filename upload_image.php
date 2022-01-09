@@ -50,7 +50,7 @@ if (isset($_POST['descricao'])) {
 					echo "<br><p class='size16'><strong>$msg</strong></p>";
 				}
 				?><br><br>
-				<form id="form" action="upload_image.php" method="post" enctype="multipart/form-data" style="border: 1px solid; padding: 29px;">
+				<form id="formulairo" action="upload_image.php" method="post" enctype="multipart/form-data" style="border: 1px solid; padding: 29px;">
 					<label>Selecione o arquivo:</label><br>
 					<input type="file" class="arquivo" name="arquivo" id="arquivo" required /><br><br>
 					<label>Escreva o texto:</label><br>
@@ -62,7 +62,7 @@ if (isset($_POST['descricao'])) {
 	</div>
 	<!-- VALIDATE -->
 	<script type="text/javascript">
-		$.validator.setDefaults({
+		/*$.validator.setDefaults({
 			submitHandler: function() {
 				alert("submitted!");
 			}
@@ -73,6 +73,25 @@ if (isset($_POST['descricao'])) {
 			messages: {
 				accept: "Formato inválido."
 			}
+		});*/
+
+		$(document).ready(function() {
+			$("#formulairo").validate({
+				rules: {
+					arquivo: {
+						required: true
+
+					},
+					descricao: {
+						required: true,
+						maxlength:250
+					}
+
+				},
+				submitHandler: function(form) {
+					alert("Arquivo enviado com sucesso!");
+				}
+			})
 		});
 	</script>
 </body>
