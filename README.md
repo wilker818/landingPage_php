@@ -1,6 +1,6 @@
 #
 
-PROVA DE APTIDãO  TESTE_PROGRAMADOR.
+PROVA DE APTIDãO  Landing Page em PHP.
 
 Consiste em criar uma webpage com HTML/ CSS/ PHP.
 
